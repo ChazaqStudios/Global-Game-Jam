@@ -1,0 +1,26 @@
+{
+    "Fase1": {
+      "001": {
+        "caracter": "Konoichi",
+        "photo": "default",
+        "text": "Dimitri, a equipe de segurança rastreiou a localização da Dra, estão levando ela até o distrito San rearu, provavelmente iram levar ela e o embaixador em um trem para, há suspeitas de golpe de estado, em você está autorizado a matar agressores se necessario, está, a equipe de inteligencia está entrando no sistema da estão, entro em contato em breve"
+      },
+      "002": {
+        "caracter": "Dimitri",
+        "photo": "default",
+        "text": "Chegarei o mais rapido possivel"
+      }
+    },
+    "FaseAlpha": {
+      "001": {
+        "caracter": "Dimitri",
+        "photo": "default",
+        "text": "vô mata o metal islugo"
+      },
+	  "002": {
+        "caracter": "Dimitri",
+        "photo": "default",
+        "text": "vô mata o metal cuntra"
+      }
+    }
+  }
