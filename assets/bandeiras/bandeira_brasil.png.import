@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toten0.png-a55f5b2eed3a43fc3631a022077d15a0.stex"
+path="res://.import/bandeira_brasil.png-3df004a62a45f9f3942acc074606570a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/totens/toten0.png"
-dest_files=[ "res://.import/toten0.png-a55f5b2eed3a43fc3631a022077d15a0.stex" ]
+source_file="res://assets/bandeiras/bandeira_brasil.png"
+dest_files=[ "res://.import/bandeira_brasil.png-3df004a62a45f9f3942acc074606570a.stex" ]
 
 [params]
 

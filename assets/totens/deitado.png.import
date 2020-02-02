@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toten0.png-a55f5b2eed3a43fc3631a022077d15a0.stex"
+path="res://.import/deitado.png-a535653a0cb72e84cfbf5e787409dca0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/totens/toten0.png"
-dest_files=[ "res://.import/toten0.png-a55f5b2eed3a43fc3631a022077d15a0.stex" ]
+source_file="res://assets/totens/deitado.png"
+dest_files=[ "res://.import/deitado.png-a535653a0cb72e84cfbf5e787409dca0.stex" ]
 
 [params]
 

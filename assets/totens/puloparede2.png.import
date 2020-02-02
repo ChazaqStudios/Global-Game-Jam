@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toten0.png-a55f5b2eed3a43fc3631a022077d15a0.stex"
+path="res://.import/puloparede2.png-f2ea75d3aa4b9c3996f8abc54613b084.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/totens/toten0.png"
-dest_files=[ "res://.import/toten0.png-a55f5b2eed3a43fc3631a022077d15a0.stex" ]
+source_file="res://assets/totens/puloparede2.png"
+dest_files=[ "res://.import/puloparede2.png-f2ea75d3aa4b9c3996f8abc54613b084.stex" ]
 
 [params]
 
