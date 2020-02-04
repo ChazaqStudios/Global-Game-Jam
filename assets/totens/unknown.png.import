@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TILEMAP.png-fca49fa9b5289baaf4386ea3497de549.stex"
+path="res://.import/unknown.png-ca8eff388974306004f1a39e27d47019.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TILEMAP.png"
-dest_files=[ "res://.import/TILEMAP.png-fca49fa9b5289baaf4386ea3497de549.stex" ]
+source_file="res://assets/totens/unknown.png"
+dest_files=[ "res://.import/unknown.png-ca8eff388974306004f1a39e27d47019.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

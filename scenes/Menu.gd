@@ -1,16 +1,22 @@
 extends Control
 
+var loader
+var wait_frames
+var time_max = 100 # msec
+var current_scene
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+func _on_Iniciar_pressed():
+	get_tree().change_scene("res://scenes/Fase.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+func _on_Config_pressed():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Creditos_pressed():
+	pass # Replace with function body.
+
+
+func _on_Sair_pressed():
+	get_tree().quit()

@@ -15,7 +15,7 @@ var enemy_dist=null
 var mirando=false
 
 func _physics_process(delta):
-	
+
 	var my_pos=get_global_position()
 	if enemy_body!=null:
 		enemy_pos=enemy_body.get_global_position()
@@ -64,12 +64,15 @@ func _on_Timer_timeout():
 func atk():
 	if vec_dir.x>0:
 		get_node("Area2D2/Dir").disabled=false
+		
 	elif vec_dir.x<0:
 		get_node("Area2D2/Esq").disabled=false
-
-
+	get_node("AnimationPlayer2").play("New Anim")
+	get_node("Area2D2/AnimatedSprite").set_position(Vector2(80*sign(vec_dir.x) ,get_node("AnimatedSprite").get_position().y) ) 
+	get_node("Area2D2/AnimatedSprite").flip_h=false if vec_dir.x<0 else true
 func _on_Area2D2_body_entered(body):
 	if body.has_method("damage"):
 		body.damage(dano)
 	get_node("Area2D2/Dir").disabled=true
 	get_node("Area2D2/Esq").disabled=true
+

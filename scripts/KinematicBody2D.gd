@@ -31,17 +31,18 @@ var hp
 var snap=Vector2(0,32)
 var init_grav=gravity
 var speed_max
-var jump_speed=300
+var jump_speed=400
 var jumping = false
 var on_floor=true
 var prev_jump_pressed = false
-
+var restart_pos
 var velocity = Vector2()
 var on_air_time = 100
 var cool_down=0.2
 var can_slide=false
 var on_wall_jump=false
 func _ready():
+	restart_pos=get_position()
 	hp=hp_max
 	hp_bar.set_value(hp)
 	
@@ -49,6 +50,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	if hp<=0 or get_global_position().y>1080:
+		revive()
 	# Create forces
 	snap=Vector2(0,32)
 	var force = Vector2(0, gravity)
@@ -65,10 +68,7 @@ func _physics_process(delta):
 	else:
 		speed_max=speed_max_normal
 
-	if totens[0]==true:
-		jump_speed=jump_speed_totem
-	else:
-		jump=jump_speed_normal
+
 
 	var stop = true
 
@@ -129,9 +129,7 @@ func _physics_process(delta):
 	if jumping and velocity.y > 0:
 		# If falling, no longer jumping
 		jumping = false
-	
-	if jump:
-		print(on_air_time<JUMP_MAX_AIRBORNE_TIME, not(prev_jump_pressed),not jumping)
+
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping:
 		snap=Vector2()
 		velocity.y = -jump_speed
@@ -200,3 +198,7 @@ func update_hp():
 	tw.interpolate_property(hp_bar,"value",hp_bar.get_value(),hp,0.5,Tween.TRANS_LINEAR,Tween.EASE_IN,0)
 	tw.start()
 
+func revive():
+	set_position(restart_pos)
+	hp=hp_max
+	update_hp()

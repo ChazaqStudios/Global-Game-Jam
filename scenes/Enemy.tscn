@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/Inimigo/Andar/andar_inim2.png" type="Texture" id=1]
 [ext_resource path="res://assets/Inimigo/Andar/andar_inim3.png" type="Texture" id=2]
@@ -10,17 +10,22 @@
 [ext_resource path="res://assets/Inimigo/Andar/andar_inim1.png" type="Texture" id=8]
 [ext_resource path="res://assets/Inimigo/Idle/idle_inim2.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Enemy.gd" type="Script" id=10]
+[ext_resource path="res://assets/Inimigo/ataque/FIRE0.png" type="Texture" id=11]
+[ext_resource path="res://assets/Inimigo/ataque/FIRE1.png" type="Texture" id=12]
+[ext_resource path="res://assets/Inimigo/ataque/FIRE2.png" type="Texture" id=13]
+[ext_resource path="res://assets/Inimigo/ataque/FIRE3.png" type="Texture" id=14]
+[ext_resource path="res://assets/Inimigo/ataque/FIRE4.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Atack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Run",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 9 ) ],
@@ -119,6 +124,44 @@ tracks/1/keys = {
 extents = Vector2( 487.831, 64.3856 )
 
 [sub_resource type="CapsuleShape2D" id=7]
+radius = 8.897
+height = 16.718
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=9]
+resource_name = "New Anim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Area2D2/AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Area2D2/AnimatedSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Node2D" type="KinematicBody2D"]
 collision_layer = 4
@@ -152,16 +195,25 @@ shape = SubResource( 6 )
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="Esq" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 96.112, 0 )
+position = Vector2( 75, 0 )
 rotation = 1.5708
 scale = Vector2( 1.65965, 1.65965 )
 shape = SubResource( 7 )
 
 [node name="Dir" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( -96.112, 0 )
+position = Vector2( -75, -0.341 )
 rotation = 1.5708
 scale = Vector2( 1.65965, 1.65965 )
 shape = SubResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D2"]
+visible = false
+position = Vector2( 80, 0 )
+z_index = -1
+frames = SubResource( 8 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 9 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

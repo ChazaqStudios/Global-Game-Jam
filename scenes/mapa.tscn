@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/tilemap de tras.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/tilemap.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/tilemap/atrazz.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/tilemap/chao.tres" type="TileSet" id=2]
 [ext_resource path="res://Place_holders/paralax/parallax-demon-woods-mid-trees.png" type="Texture" id=3]
 [ext_resource path="res://Place_holders/paralax/parallax-demon-woods-close-trees.png" type="Texture" id=4]
 [ext_resource path="res://Place_holders/paralax/parallax-demon-woods-far-trees.png" type="Texture" id=5]
