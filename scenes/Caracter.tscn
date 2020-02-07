@@ -1,16 +1,16 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://assets/jag/correr_jag1.png" type="Texture" id=1]
+[ext_resource path="res://assets/jag/correrjag1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/jag/idle1.png" type="Texture" id=3]
-[ext_resource path="res://assets/jag/correr_jag3.png" type="Texture" id=4]
-[ext_resource path="res://assets/jag/correr_jag2.png" type="Texture" id=5]
+[ext_resource path="res://assets/jag/correrjag3.png" type="Texture" id=4]
+[ext_resource path="res://assets/jag/correrjag2.png" type="Texture" id=5]
 [ext_resource path="res://assets/jag/correr_jag4.png" type="Texture" id=6]
-[ext_resource path="res://assets/jag/pular/pular_jag3.png" type="Texture" id=7]
-[ext_resource path="res://assets/jag/pular/pular_jag1.png" type="Texture" id=8]
-[ext_resource path="res://assets/jag/pular/pular_jag2.png" type="Texture" id=9]
-[ext_resource path="res://assets/jag/pular/pular_jag4.png" type="Texture" id=10]
-[ext_resource path="res://assets/jag/pular/pular_jag5.png" type="Texture" id=11]
+[ext_resource path="res://assets/jag/Pular/pularjag3.png" type="Texture" id=7]
+[ext_resource path="res://assets/jag/Pular/pularjag4.png" type="Texture" id=8]
+[ext_resource path="res://assets/jag/Pular/pularjag5.png" type="Texture" id=9]
+[ext_resource path="res://assets/jag/Pular/pularjag1.png" type="Texture" id=10]
+[ext_resource path="res://assets/jag/Pular/pularjag2.png" type="Texture" id=11]
 [ext_resource path="res://assets/totens/toten0.png" type="Texture" id=12]
 [ext_resource path="res://assets/totens/toten1.png" type="Texture" id=13]
 [ext_resource path="res://assets/totens/toten3.png" type="Texture" id=14]
@@ -25,29 +25,29 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "Run",
-"speed": 10.0
+"name": "wall_jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "wall_jump",
-"speed": 5.0
+"name": "Run",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 18 ) ],
 "loop": true,
 "name": "Wall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Jump",
 "speed": 5.0
 } ]
 
@@ -249,8 +249,8 @@ volume_db = 18.87
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "wall_jump"
-frame = 1
+animation = "Jump"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
